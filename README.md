@@ -32,6 +32,6 @@ Obs: Não precisa iniciar o servidor Ratchet em seu computador, o projeto já es
 
 2. Inicie o servidor WebSocket em seu computador:
 
-`php /socket/socket.php`
+`php ./socket/socket.php`
 
 3. Reinicie a página no navegador
