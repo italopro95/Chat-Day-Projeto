@@ -1,5 +1,5 @@
 <h1> Chat Day </h1>
-<h2><a href="https://www.chatday.online">Projeto privado</a></h2>
+<h2><a href="https://chatday.online/">Projeto privado</a></h2>
 <img src="https://scontent.ffec3-1.fna.fbcdn.net/v/t1.0-9/127537111_2779504492290340_6917908437226539688_n.jpg?_nc_cat=102&ccb=2&_nc_sid=e3f864&_nc_ohc=CgOuQ7OWGfIAX83R_ud&_nc_ht=scontent.ffec3-1.fna&oh=d07997033f8ea515c2e7492824800d21&oe=5FF75FFA">
 
 
