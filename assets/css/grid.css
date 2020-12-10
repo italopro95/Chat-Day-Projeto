@@ -1,0 +1,48 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+.grid{
+    height: 100%;
+}
+.svg-header{
+    height: 30px;
+}
+.header{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    position: sticky;
+    color: white;
+    background-color:#0e0e0e ;
+    grid-area: header;
+    height: 100%;
+    text-align: center;
+}   
+.grid{
+    display: grid;
+    grid-template-columns: 100fr;
+    grid-template-rows:10% 90%;
+    grid-template-areas:"header"  
+                        "chat";
+}
+.menu-button{
+    grid-area: menu;
+    
+}
+.menu{
+    display: flex;
+    color: white;
+    background: rgb(14, 14, 14);
+    border-right: 1px solid grey;
+}
+.chat{
+    grid-area: chat;
+}
+
