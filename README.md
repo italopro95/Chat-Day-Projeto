@@ -8,7 +8,7 @@
 
 1. Clone o projeto para o seu computador:
 
-`git clone https://github.com/edmariooliver/Chat-php.git`
+`git clone https://github.com/edmariooliver/Chat-Day-Projeto.git`
 
 2. Entre na pasta do chat:
 
