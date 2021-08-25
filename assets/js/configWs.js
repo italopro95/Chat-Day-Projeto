@@ -1,10 +1,9 @@
-// var msg = new WebSocket("wss://chat-day.herokuapp.com/wss");
-
 var nodebr = document.createElement("br");
 var msg = 0
 
 console.log(onsubmit)
-msg = new WebSocket("ws://192.168.0.100:8085");
+var msg = new WebSocket("wss://chat-day.herokuapp.com/wss");
+// msg = new WebSocket("ws://192.168.0.100:8085");
 msg.onopen = function(e) {
     console.log("Sucesso")
 }
