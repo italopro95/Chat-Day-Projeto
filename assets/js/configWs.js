@@ -1,7 +1,7 @@
 var nodebr = document.createElement("br");
 var msg = 0
-// var msg = new WebSocket("wss://chat-day.herokuapp.com/wss");
-msg = new WebSocket("ws://192.168.0.100:8085");
+var msg = new WebSocket("wss://chat-day.herokuapp.com/wss");
+// msg = new WebSocket("ws://192.168.0.100:8085");
 
 var name_client = valor_cookie("client_name")
 
