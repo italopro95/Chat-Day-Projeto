@@ -9,73 +9,34 @@
     <meta name="robots" content="index">
     <meta property="og:url" content="https://chatday.online/chat.html">
     <meta property="og:url" content="https://chatday.online/assets/img/logo.png">
-    <link rel="stylesheet" type="text/css" href="assets/css/grid.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/header.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/first_page.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/chat_page.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/chat_page.css"> 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">    
     <meta property="og:title" content="Bate-papo Chat Day">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <meta property="og:url" content="https://chatday.online/assets/img/logo.png">
     <meta name="description" content="Chat-day é um site de bate-papo online. Entre e conheça novas pessoas, converse sobre tudo que você quiser, com quem você quiser :)">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8TD6HN5BHV"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-8TD6HN5BHV');
-    </script>
+
     <title>Bate-papo Chat Day</title>
 </head>
 <body style="font-family: 'Rubik', sans-serif;">
     <audio src="assets/audio/notify.mp3" id="audio">aaaaaaa</audio>
-    <div id="div-form" class="div-form grid-form">
-        <br>
-        <h1>Divirta-se</h1>
-        <h3>Digite seu apelido para entrar no chat.</h3>
-        <div id='form' class="form">
-            <br>
-            <input type="text" id="input-name" placeholder="Apelido" >
-            <br>
-            <button onclick="wel_chat()">Entrar</button>
-        </div>
-        <div>
-        </div>
-     </div>
     <div class="grid">
-        <div  class="header">
-            <img  style="cursor: pointer;" src="assets/img/logo.png" class="svg-header" alt="">
-            <p>Chat Day</p>
-        </div>
-        <div class="menu" id="menu">
-            <div class="item-menu">
-                <img class="svg-menu"  onclick="close_menu()" style="cursor: pointer;" src="assets/img/cancel.svg" alt="">
-            </div>
-            <div class="item-menu" style="text-align:center">
-                <img src="assets/img/logo.png" class="logo" alt="">
-                <p>Chat Day </p>
-            </div>
-            <div class="item-menu">
-                <p id="delete-msg" onclick="del_msg()"><img src="assets/img/lixeira.svg" class="menu-icon" alt=""> Limpar conversa</li>       
-            </div>
-            <div class="item-menu">
-                <input checked type="checkbox" name="" id="autosc">
-                <label for="autosc">Auto rolagem</label>
-            </div>
-            <div class="item-menu">
-                <input id="notify" checked type="checkbox">
-                <label for="notify">Notificação</label>
-            </div>
+        <div class="header">
+            
+            <p class="title"><strong>Chat Day</strong><ion-icon name="chatbubbles"></ion-icon></p>
+            <a href="/apelido.html" class="button-edit"><ion-icon name="create-outline"></ion-icon><p></ion-icon>  Editar nome</p></a>
         </div>
         <div class="chat">
-            <div class="mensagens">      
+            <div class="mensagens" id="divMsg">   
             </div>
             <div class="input-msg">
-                <img onclick="open_menu()" id="config-button"style="cursor: pointer;" src="assets/img/menu.svg" class="svg-menu" alt="">
+                <!-- <ion-icon name="settings-outline" onclick="open_menu()" id="config-button"style="cursor: pointer;"></ion-icon> -->
                 <input placeholder="Escreva sua mensagem"  onkeydown="sendMsgEnter(event)" type="text" id="msg">
-                <img src="assets/img/send.svg" onclick="sendMsg()" class="button-send" alt="" align="">
+                <ion-icon onclick="sendMsg()" class="button-send"name="send-outline"></ion-icon>
             </div>
         </div>
     </div>

@@ -1,16 +1,9 @@
-
-function del_msg(){
-    var node = document.querySelector(".mensagens");
-    if (node.parentNode) {
-        node.parentNode.removeChild(node);
-    }
-    var nodechat = document.createElement('div')
-    nodechat.className = 'mensagens'
-    var nodedivchat = document.querySelector('.chat')
-    nodedivchat.appendChild(nodechat)
-
-}
 function wel_chat(){
+    var nomeInput = (document.querySelector('#input-name').value)
+    nome = nomeInput.trim()
+
+    // msg = new WebSocket("ws://192.168.0.100:8085?name="+nome);
+    //iniciando a conexao
     var form = document.querySelector('.div-form')
     var chat = document.querySelector('.grid')
     var nomeInput = (document.querySelector('#input-name').value)
@@ -20,9 +13,8 @@ function wel_chat(){
         window.alert('Nome inválido, seu nome deve conter de 1 até 15 caracteres')
  
     }else{
-        var name_user = document.getElementById('name-user')
-        form.style.display = 'none'
-        chat.style.display = 'grid'
+        document.cookie = "@" + nome + "@";
+        window.location.href = '/chat.html'
     }
 
 }

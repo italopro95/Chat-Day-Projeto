@@ -1,149 +1,132 @@
-
-#config-button{
-    height: 30px!important;
-    background-color: #4ae9d9;
-    padding:5px;
-    border-radius: 50px;
-    margin-right: 10px;
-}
-
-.nome-bot{
-    margin-bottom: 10px;
-    margin-left: 10px;
-    color: rgb(30, 255, 0);
-
-}.msg-video{
-    margin-top: 5px;
-    margin-left: 10px;
-    padding: 5px;
-    border-radius: 50px;
-    background-color: #FFBC42;
-    margin-bottom: 10px;
-    border: none;
-}
-.chat{
-    height: 100%;
-    display: grid;
-    background-color: #1f1f1f;
-    /* background-image: url(../img/bg-alls.webp); */
-    background-repeat: no-repeat;
-    background-size: cover;
-    grid-template-columns: 100%;
-    grid-template-rows: 90% 10%;
-    grid-template-areas:"msg"
-                        "input";
-    border: 1px solid black;
-}
-.mensagens{
+* {
     scroll-behavior: smooth;
-    overflow-y: scroll;
+    padding: 0;
+    margin: 0;
 }
-
-.svg{
+.bot{
+    color: rgb(1, 255, 1) !important;
+}
+.input-msg{
+    background-color:  #222121;;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    align-items: center;
+    display: flex;
     height: 40px;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-.configs-svg{
-    align-self: middle;
-    vertical-align: middle;
-    margin-top: 5px;
-    cursor: pointer;
-}
-.inputs{
+    width: 100%;
     bottom: 0;
     position: fixed;
 }
-.button-send{
-    height: 40px;
+.input-msg ion-icon{
+    margin-right: 10px;
+    margin: 5px;
+    font-size: 40px;
+    color: white;
     cursor: pointer;
-    margin-bottom: 5px;
 }
-#msg{
-    font-size: 12pt;
-    width: 80%;
-    height: 40px;
-    border: 1px solid black;
+.input-msg input{
+    border: none;
+    border-radius: 30px;
+    height: 100%;
     outline: none;
-    border-radius: 50px;
-    padding-left: 15px;
+    font-size: 13pt;
+    text-indent: 15px;
     margin-bottom: 5px;
+    width: 90%;
 }
-.div-msg-me{
+.title{
+    font-size: 15pt;
+}
+.button-edit{
+    margin-right: 20px;
+    align-items: center;
     display: flex;
-    justify-content: flex-end;
-    
-}.div-msg-other{
-    justify-content: flex-start;
+    text-decoration: none;
+    color: white;
+}
+.header{
+    justify-content: space-between;
+    flex-direction: row;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    height: 30px;
+    padding: 10px;
+    color: #fafafa;
+    background-color: #19191b !important;
+    display: flex;
+    align-items: center;
+}
+.mensagens{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: 80vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #222121;
+    overflow-y: auto;
+    color: white;
     display: flex;
     flex-direction: column;
 }
-.mensagens{
-    grid-area: msg;
+.header img{
+    height: 40px;
+    width: 50px;
 }
-.input-msg{
-    z-index: 100;
-    align-items: flex-end;
-    justify-content: center;
+.div-msg-other{
     display: flex;
-    width: 100%;
-    grid-area: input;
-}
-#delete-msg{
-    cursor: pointer;
-}
-
-/* ESTILIZAÇÃO DE MENSAGENS */
-
-.msg-me{
-    margin-right: 10px;
-    margin-top: 10px;
-    right: 5px;
-    border-radius: 50px;
-    padding: 10px;
-    background: #2EC4B6;
-    width: 290px;
-    word-wrap: break-word;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    font-weight: 500;
-
-}.nome-me{
-    color: white;
-    margin-top: 10px;
-    margin-left: 10px;
+    flex-direction: column;
+    align-self: flex-start;
+    margin: 5px;
+    float: left;
 }
 .msg-other{
-    width: 290px;
-    margin-bottom: 10px;
-    border-radius: 50px;
-    padding: 10px;
-    background: #FFBC42;    
     word-wrap: break-word;
-    margin-left: 10px;
-    
-}.nome-other{
     color: white;
-    margin-top: 10px;
-    margin-left: 10px;
+    max-width: 300px;
+    border-radius: 20px;
+    padding: 10px;
+    background: rgb(0, 136, 0);
 }
-::-webkit-scrollbar-button{
-    color: #2EC4B6;
+.div-msg-me{
+    margin-top: 5px;
+    align-self: flex-end;
 }
-::-webkit-scrollbar{
-    background-color: #FFBC42;
-    width: 3px;
+.msg-video{
+    border: none;
+    border-radius: 20px;
+    background-color:rgb(0, 136, 0);
 }
-.button-doar{
-    border:none;
-    height: 50px;
-    width: 200px;
-    background-color: rgb(3, 128, 185);
+.msg-me{
+    word-wrap: break-word;
+    max-width: 300px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+    width: auto;
+    float: left;
+    background-color: rgb(0, 68, 255);
 }
 
-@media (max-width: 650px){
-    body{
-        padding-left: 0;
-        padding-right: 0;
-    }
+/* para  Firefox */
+* {
+    scrollbar-width: none;
+    scrollbar-color: none;
+}
+    
+/* Para on Chrome, Edge, e Safari */
+*::-webkit-scrollbar {
+    width: 0px;
+}
+    
+*::-webkit-scrollbar-track {
+    background: none;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: none;
+    border-radius: 0px;
+    border: 0px solid none;
 }
