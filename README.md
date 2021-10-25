@@ -29,7 +29,7 @@ Obs: Não precisa iniciar o servidor Ratchet em seu computador, o projeto já es
 
 1. Entre na pasta, assets/js/configWs.js e altere:
 
-`var msg = new WebSocket("wss://chat-day.herokuapp.com/wss");` para `var msg = new WebSocket("ws://localhost:8085");`
+`var msg = new WebSocket("wss://chatday.herokuapp.com/wss");` para `var msg = new WebSocket("ws://localhost:8085");`
 
 2. Inicie o servidor WebSocket em seu computador:
 
