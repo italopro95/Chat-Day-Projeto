@@ -1,6 +1,10 @@
 var nodebr = document.createElement("br");
 var msg = 0
 var msg = new WebSocket("wss://chatday.herokuapp.com/wss");
+
+//Div de carregamento
+var divLoad = document.getElementById("loadChat")
+
 // msg = new WebSocket("ws://192.168.0.100:8085");
 
 var name_client = valor_cookie("client_name")
@@ -37,16 +41,13 @@ function valor_cookie(nome_cookie) {
 
 msg.onopen = function(e) {
     console.log("Sucesso")
+    divLoad.style.display = 'none'
 }
 
 msg.onmessage = function(e) {
     dados = JSON.parse(e.data);
     if (dados.type == "bot") {
         if (dados.typemsg == "txt") {
-            // var divMsg = document.getElementById("divMsg")
-            // console.log(dados.nome)
-            // divMsg.innerHTML += '<div class="div-msg-other"><p class="nome-other '+dados.type+'"><strong>'+ dados.nome +'</strong></p><p class="msg-other">'+ dados.msg +'</p></div>'
-            
             var nodeNome = document.createElement("p");
             nodeNome.className = "nome-other";
             var nodeMsg = document.createElement("p");
@@ -66,8 +67,6 @@ msg.onmessage = function(e) {
             document.querySelector('.mensagens').appendChild(divNode)
         }
         if (dados.typemsg == "video") {
-            // var divMsg = document.getElementById("divMsg")
-            // divMsg.innerHTML += '<div class="div-msg-other"><p class=" nome-other '+dados.type+'"><strong>'+dados.nome+'<strong></p><iframe src="'+dados.msg+'" width="290" height="400" allowfullscreen="" class="msg-video"></iframe></div>'
             var nodeNome = document.createElement("p");
             var textnodeNome = document.createTextNode(dados.nome);
             nodeNome.appendChild(textnodeNome);
@@ -88,14 +87,10 @@ msg.onmessage = function(e) {
             document.querySelector('.mensagens').appendChild(divNode)
         }
     } else {
-        // var divMsg = document.getElementById("divMsg")
-        // console.log(dados.nome)
-        // divMsg.innerHTML += '<div class="div-msg-other"><p class="nome-other"><strong>'+ dados.nome +'</strong></p><p class="msg-other">'+ dados.msg +'</p></div>'
         var nodeNome = document.createElement("p")
         nodeNome.className = "nome-other"
         var textnodeNome = document.createTextNode(dados.nome);
         nodeNome.appendChild(textnodeNome)
-
         var nodeMsg = document.createElement("p")
         nodeMsg.className="msg-other"
         var textnodeMsg = document.createTextNode(dados.msg);
@@ -109,11 +104,8 @@ msg.onmessage = function(e) {
 
         document.querySelector(".mensagens").appendChild(divNode);
     }
-    // if(document.getElementById('notify').checked == true){        
-    //     var audio = document.getElementById("audio");
-    //     audio.play()
-    // }
-    console.log(document.querySelector(".mensagens").scrollTop = document.querySelector(".mensagens").scrollHeight)  
+    var audio = document.getElementById("audio");
+    audio.play()
 }
 
 function sendMsgEnter(event) {
@@ -136,10 +128,6 @@ function sendMsg(n) {
         };
         dados = JSON.stringify(dados);
         msg.send(dados)
-        
-        // divMsg.innerHTML += '<div class="div-msg-me"><p class="msg-me">'+msgSend+'</p></div>'
-        // document.getElementById("msg").value = "" 
-
         var nodeMsg = document.createElement("p")
         nodeMsg.className="msg-me"
         var textnodeMsg = document.createTextNode(msgSend);
