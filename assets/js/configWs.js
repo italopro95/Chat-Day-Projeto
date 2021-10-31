@@ -104,6 +104,7 @@ msg.onmessage = function(e) {
 
         document.querySelector(".mensagens").appendChild(divNode);
     }
+    console.log(document.querySelector(".mensagens").scrollTop = document.querySelector(".mensagens").scrollHeight)  
     var audio = document.getElementById("audio");
     audio.play()
 }
