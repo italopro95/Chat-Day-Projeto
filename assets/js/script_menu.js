@@ -2,10 +2,8 @@ function wel_chat(){
     var nomeInput = (document.querySelector('#input-name').value)
     nome = nomeInput.trim()
 
-    // msg = new WebSocket("ws://192.168.0.100:8085?name="+nome);
-    //iniciando a conexao
     var form = document.querySelector('.div-form')
-    var chat = document.querySelector('.grid')
+    var chat = document.querySelector('#grid')
     var nomeInput = (document.querySelector('#input-name').value)
     nome = nomeInput.trim()
     nome.trim

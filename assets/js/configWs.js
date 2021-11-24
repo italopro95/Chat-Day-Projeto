@@ -1,11 +1,19 @@
-var nodebr = document.createElement("br");
-var msg = 0
+const nodebr = document.createElement("br")
+
+/**
+ * Server remoto
+ */
 var msg = new WebSocket("wss://chatday.herokuapp.com/wss");
 
-//Div de carregamento
-var divLoad = document.getElementById("loadChat")
+/**
+ * Server local
+ */
+// const msg = new WebSocket("ws://localhost:8085");
 
-// msg = new WebSocket("ws://192.168.0.100:8085");
+//Div de carregamento
+const divLoad = document.getElementById("loadChat")
+const divChat = document.getElementById("grid")
+
 
 var name_client = valor_cookie("client_name")
 
@@ -42,6 +50,7 @@ function valor_cookie(nome_cookie) {
 msg.onopen = function(e) {
     console.log("Sucesso")
     divLoad.style.display = 'none'
+    divChat.style.display = 'block'
 }
 
 msg.onmessage = function(e) {
@@ -145,7 +154,8 @@ function sendMsg(n) {
 }
 
 msg.onError = function (e){
-    window.alert("erro")
+    alert("erro")
+    console.log("deu erro")
 }
 function del_msg(){
     var node = document.querySelector(".mensagens");

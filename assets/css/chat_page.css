@@ -3,6 +3,9 @@
     padding: 0;
     margin: 0;
 }
+#grid{
+    display: none;
+}
 .bot{
     color: rgb(1, 255, 1) !important;
 }
