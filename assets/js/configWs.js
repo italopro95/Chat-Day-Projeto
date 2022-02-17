@@ -118,10 +118,10 @@ msg.onmessage = function(e) {
     audio.play()
 }
 
-msg.onerror((e) => {
+msg.onerror = (e) => {
     alert('Desconectado do Chat, recarregue a página');
     console.log(e);
-})
+}
 
 function sendMsgEnter(event) {
     if (event.key == "Enter") {
