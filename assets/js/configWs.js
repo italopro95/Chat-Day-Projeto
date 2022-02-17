@@ -118,7 +118,7 @@ msg.onmessage = function(e) {
     audio.play()
 }
 
-msg.onerror = (e) => {
+msg.onerror = function(e) {
     alert('Desconectado do Chat, recarregue a página');
     console.log(e);
 }
