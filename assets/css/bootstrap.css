@@ -4,6 +4,9 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ @charset "UTF-8";
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -45,7 +48,7 @@
 
 body {
   color: white !important;
-  background-color: rgb(36, 36, 36) !important;
+  background-color: #242424 !important;
 }
 html {
   font-family: sans-serif;
@@ -65,24 +68,42 @@ html {
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
+
 .header{
   display: flex;
-  color:white;
-  background-color: var(--black);
+  background-image: linear-gradient(to bottom, #dc143c ,#242424 );
   width: 100%;
   position: sticky;
   top: 0;
   padding-top: 7px;
   justify-content: center;
-  height: 10vh;
+  height: 12vh;
   z-index: 10000;
 }
+
+/* LOGO */
+
+.header img {
+  width: 80px;
+  height: 70px;
+}
+
+
+/* TEXTO DA LOGO  */
+
+.text-logo {
+  color: #ffffff;
+  font-size: .9em;
+  float: left;
+  line-height: 50px;
+  
+}
+
 .svg-menu {
   height: 30px;
 }
-.logo{
-  height: 40px;
-}
+
+
 .section-first{
   width: 100%;
   padding-top: 100px;
@@ -93,7 +114,34 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   padding-left: 50px;
   padding-right: 50px;
   
-}.section-first button{
+}
+
+.section-first h2 span {
+  width: 294px;
+  animation:  digitando 3s steps(25), blink 
+  .4s infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+  display: inline-block;
+}
+
+
+@keyframes digitando {
+  from{
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  40% {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+
+
+.section-first button{
   font-size: 13pt;
   margin: 15px;
   color:white;
@@ -102,7 +150,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   -o-transition: 500ms;
   width: 300px;
   height: 40px;
-  background-color: crimson;
+  background-color: #dc143c;
   border: none;
   border-radius: 50px;
   outline: none;
@@ -165,11 +213,11 @@ p{
   padding-right: 50px;
   padding-top: 10px;
   width: 100%;
-  background: #020202;
   color: white;
   width: 100%;
   height: 140px;
   padding-bottom: 10px;
+  background-image: linear-gradient(to bottom, #dc143c , #242424 80% );
 }
 .footer img{
   height: 30px;
@@ -484,11 +532,11 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.2;
 }
 
-h1, .h1 {
+h2, .h2 {
   font-size: 2.5rem;
 }
 
-h2, .h2 {
+h3, .h3 {
   font-size: 2rem;
 }
 
@@ -673,11 +721,23 @@ pre code {
 
 }
 
+@media (min-width: 320px) {
+   .section-first h2 {
+     margin-bottom: 15%;
+   }
+}
+
 @media (min-width: 576px) {
   .container, .container-sm {
     max-width: 540px;
   }
+
+  .section-first h2 {
+    margin-bottom: 10%;
+  }
 }
+
+
 
 @media (min-width: 768px) {
   .container, .container-sm, .container-md {
@@ -689,7 +749,12 @@ pre code {
   .container, .container-sm, .container-md, .container-lg {
     max-width: 960px;
   }
+
+  .section-first h2 {
+    margin-bottom: 5%;
+  }
 }
+
 
 @media (min-width: 1200px) {
   .container, .container-sm, .container-md, .container-lg, .container-xl {

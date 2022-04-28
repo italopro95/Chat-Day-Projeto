@@ -16,6 +16,32 @@ body{
     flex-direction: column;
 }
 
+/*   ANIMAÇÃO DIGITANDO  */
+
+.title {
+    margin-bottom: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 145px;
+    display: flex;
+    border-right: 2px solid;
+    animation: digitando 1.5s steps(15), blink
+    .4s infinite alternate;
+
+}
+
+@keyframes digitando {
+   from {
+       width: 0;
+   }  
+}
+
+@keyframes blink {
+    40% {
+        border-right: rgb(255, 255, 255, 0.2);
+    }
+}
+
 .button{
     border-radius: 10px;
     justify-content: center;
